@@ -5,7 +5,6 @@ import LenisProvider from '@/components/LenisProvider'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PageTransition from '@/components/PageTransition'
-import CustomCursor from '@/components/CustomCursor'
 import ScrollProgress from '@/components/ScrollProgress'
 import BackToTop from '@/components/BackToTop'
 import './globals.css'
@@ -33,11 +32,10 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${geistSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="min-h-full bg-[#0F1117] text-[#F1F5F9]">
         <LenisProvider>
-          <CustomCursor />
           <ScrollProgress />
           <Navbar />
           <PageTransition>{children}</PageTransition>

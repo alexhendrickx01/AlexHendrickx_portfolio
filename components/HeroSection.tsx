@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
+import { AnimatedGrid } from '@/components/ui/animated-grid'
 import { ShimmerButton } from '@/components/ui/shimmer-button'
 import { gsap, ScrollTrigger, SplitText } from '@/lib/gsap'
 
@@ -54,12 +55,15 @@ export default function HeroSection() {
       ref={sectionRef}
       className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0F1117]"
     >
-      {/* Gradient blobs */}
+      {/* Animated grid */}
+      <AnimatedGrid />
+
+      {/* Gradient blobs layered over grid for depth */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 -top-32 h-[600px] w-[600px] animate-pulse rounded-full bg-[#6366F1] opacity-[0.08] blur-[120px]" />
+        <div className="absolute -left-32 -top-32 h-[600px] w-[600px] animate-pulse rounded-full bg-[#6366F1] opacity-[0.06] blur-[140px]" />
         <div
-          className="absolute -bottom-32 -right-32 h-[500px] w-[500px] animate-pulse rounded-full bg-[#22D3EE] opacity-[0.07] blur-[120px]"
-          style={{ animationDelay: '1000ms' }}
+          className="absolute -bottom-32 -right-32 h-[500px] w-[500px] animate-pulse rounded-full bg-[#22D3EE] opacity-[0.05] blur-[140px]"
+          style={{ animationDelay: '1200ms' }}
         />
       </div>
 
@@ -80,7 +84,7 @@ export default function HeroSection() {
           Graduation Portfolio 2025
         </motion.div>
 
-        {/* Main heading — GSAP SplitText animates this */}
+        {/* Main heading GSAP SplitText animates this */}
         <h1
           ref={headingRef}
           className="text-6xl font-bold tracking-tight text-[#F1F5F9] md:text-8xl [perspective:800px]"
@@ -89,7 +93,7 @@ export default function HeroSection() {
           Alex Hendrickx
         </h1>
 
-        {/* Subheading — gradient */}
+        {/* Subheading gradient */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

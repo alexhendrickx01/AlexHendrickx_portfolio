@@ -42,7 +42,7 @@ body {
   font-family: var(--font-sans);
   font-feature-settings: 'rlig' 1, 'calt' 1;
   -webkit-font-smoothing: antialiased;
-  cursor: none;
+  cursor: auto;
 }
 
 /* ── Subtle noise texture overlay ── */
