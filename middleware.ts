@@ -1,31 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const user     = process.env.BASIC_AUTH_USER
-  const password = process.env.BASIC_AUTH_PASSWORD
+  const { pathname } = request.nextUrl
 
-  // Skip protection if env vars not set (local dev without .env.local)
-  if (!user || !password) return NextResponse.next()
-
-  const authHeader = request.headers.get('authorization')
-
-  if (authHeader) {
-    const [scheme, encoded] = authHeader.split(' ')
-    if (scheme === 'Basic' && encoded) {
-      const decoded    = atob(encoded)
-      const [u, ...p]  = decoded.split(':')
-      if (u === user && p.join(':') === password) {
-        return NextResponse.next()
-      }
-    }
+  // Allow the login page and auth API through
+  if (pathname === '/internship/login' || pathname.startsWith('/api/internship-auth')) {
+    return NextResponse.next()
   }
 
-  return new NextResponse('Toegang geweigerd', {
-    status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="Stage — Alex Hendrickx Portfolio"',
-    },
-  })
+  const cookie = request.cookies.get('internship-auth')
+  if (cookie?.value === process.env.BASIC_AUTH_PASSWORD) {
+    return NextResponse.next()
+  }
+
+  const loginUrl = new URL('/internship/login', request.url)
+  return NextResponse.redirect(loginUrl)
 }
 
 export const config = {
