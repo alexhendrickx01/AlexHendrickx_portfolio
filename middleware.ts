@@ -1,26 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const user     = process.env.BASIC_AUTH_USER
-  const password = process.env.BASIC_AUTH_PASSWORD
+  const { pathname } = request.nextUrl
 
-  if (!user || !password) return NextResponse.next()
-
-  const authHeader = request.headers.get('authorization')
-
-  if (authHeader?.startsWith('Basic ')) {
-    const encoded = authHeader.slice(6)
-    const decoded = atob(encoded)
-    const colon   = decoded.indexOf(':')
-    const u = decoded.slice(0, colon)
-    const p = decoded.slice(colon + 1)
-    if (u === user && p === password) return NextResponse.next()
+  if (pathname === '/internship/login' || pathname.startsWith('/api/internship-auth')) {
+    return NextResponse.next()
   }
 
-  return new NextResponse('Unauthorized', {
-    status: 401,
-    headers: { 'WWW-Authenticate': 'Basic realm=Stage' },
-  })
+  const cookie = request.cookies.get('internship-auth')
+  if (cookie?.value === process.env.BASIC_AUTH_PASSWORD) {
+    return NextResponse.next()
+  }
+
+  return NextResponse.redirect(new URL('/internship/login', request.url))
 }
 
 export const config = {
