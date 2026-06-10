@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import PageTransition from '@/components/PageTransition'
 import ScrollProgress from '@/components/ScrollProgress'
 import BackToTop from '@/components/BackToTop'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const geistSans = Geist({
@@ -41,6 +42,7 @@ export default function RootLayout({
           <PageTransition>{children}</PageTransition>
           <Footer />
           <BackToTop />
+          <Analytics />
         </LenisProvider>
       </body>
     </html>
