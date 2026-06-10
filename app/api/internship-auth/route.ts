@@ -1,11 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-export async function POST(request: NextRequest) {
-  const { password } = await request.json()
+async function sha256(text: string): Promise<string> {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
 
-  if (password === process.env.BASIC_AUTH_PASSWORD) {
+export async function POST(request: NextRequest) {
+  const { username, password } = await request.json()
+
+  if (
+    username === process.env.BASIC_AUTH_USER &&
+    password === process.env.BASIC_AUTH_PASSWORD
+  ) {
+    const hash = await sha256(process.env.BASIC_AUTH_PASSWORD!)
     const res = NextResponse.json({ ok: true })
-    res.cookies.set('internship-auth', password, {
+    res.cookies.set('internship-auth', hash, {
       httpOnly: true,
       secure: true,
       sameSite: 'lax',

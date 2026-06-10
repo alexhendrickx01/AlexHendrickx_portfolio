@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Lock } from 'lucide-react'
 
 export default function InternshipLogin() {
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError]       = useState(false)
   const [loading, setLoading]   = useState(false)
@@ -18,7 +19,7 @@ export default function InternshipLogin() {
     const res = await fetch('/api/internship-auth', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password }),
+      body: JSON.stringify({ username, password }),
     })
 
     if (res.ok) {
@@ -47,13 +48,27 @@ export default function InternshipLogin() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-6">
           <div className="flex flex-col gap-2">
             <label className="text-[10px] font-bold uppercase tracking-widest text-[#94A3B8]">
+              Gebruikersnaam
+            </label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              autoFocus
+              autoComplete="username"
+              className="border-2 border-[#2D3748] bg-[#0F1117] px-4 py-3 text-sm text-[#F1F5F9] outline-none transition-colors focus:border-[#6366F1] placeholder:text-[#94A3B8]/50"
+              placeholder="gebruikersnaam"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-[#94A3B8]">
               Wachtwoord
             </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              autoFocus
+              autoComplete="current-password"
               className="border-2 border-[#2D3748] bg-[#0F1117] px-4 py-3 text-sm text-[#F1F5F9] outline-none transition-colors focus:border-[#6366F1] placeholder:text-[#94A3B8]/50"
               placeholder="••••••••"
             />
@@ -67,7 +82,7 @@ export default function InternshipLogin() {
 
           <button
             type="submit"
-            disabled={loading || !password}
+            disabled={loading || !password || !username}
             className="flex h-11 items-center justify-center border-2 border-[#6366F1] bg-[#6366F1] text-sm font-bold text-white transition-opacity hover:opacity-90 disabled:opacity-40"
           >
             {loading ? 'Bezig…' : 'Toegang'}
