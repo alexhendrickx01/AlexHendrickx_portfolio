@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { Lock } from 'lucide-react'
 
 export default function InternshipLogin() {
@@ -9,7 +8,6 @@ export default function InternshipLogin() {
   const [password, setPassword] = useState('')
   const [error, setError]       = useState(false)
   const [loading, setLoading]   = useState(false)
-  const router = useRouter()
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -23,8 +21,7 @@ export default function InternshipLogin() {
     })
 
     if (res.ok) {
-      router.push('/internship')
-      router.refresh()
+      window.location.href = '/internship'
     } else {
       setError(true)
       setLoading(false)
