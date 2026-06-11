@@ -23,6 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Alex Hendrickx | Portfolio',
   description: 'Graduation portfolio — Bachelor Informatica, Thomas More',
+  icons: {
+    icon: [{ url: '/alex-hendrickx-logo.svg', type: 'image/svg+xml' }],
+  },
 }
 
 export default function RootLayout({

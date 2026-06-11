@@ -81,7 +81,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 rounded-full border border-[#6366F1]/30 bg-[#6366F1]/10 px-4 py-1.5 text-xs font-medium text-[#6366F1]"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-[#6366F1] animate-pulse" />
-          Graduation Portfolio 2025
+          Graduation Portfolio 2026
         </motion.div>
 
         {/* Main heading GSAP SplitText animates this */}
@@ -112,7 +112,7 @@ export default function HeroSection() {
         >
           <p className="max-w-md text-base text-[#94A3B8]">
             Dit portfolio toont mijn groei, stage-ervaring en projecten als
-            afstuderende student informatica.
+            afstuderende informatica student.
           </p>
 
           <Link href="/internship">

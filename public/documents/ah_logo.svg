@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" width="110" height="110">
+  <rect width="110" height="110" fill="#0F1117"/>
+
+  <!-- === A (cols 0-2, rows 0-7) === -->
+  <!-- col 0 -->
+  <rect x="5"  y="5"  width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="5"  y="21" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="5"  y="37" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="5"  y="53" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="5"  y="69" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="5"  y="85" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <!-- col 1 top -->
+  <rect x="21" y="5"  width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <!-- col 1 crossbar -->
+  <rect x="21" y="37" width="14" height="14" fill="#22D3EE" stroke="#15a8c0" stroke-width="1"/>
+  <!-- col 2 -->
+  <rect x="37" y="5"  width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="37" y="21" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="37" y="37" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="37" y="53" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="37" y="69" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="37" y="85" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+
+  <!-- === H (cols 4-6, rows 0-7) === -->
+  <!-- col 4 -->
+  <rect x="59" y="5"  width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="59" y="21" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="59" y="37" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="59" y="53" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="59" y="69" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="59" y="85" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <!-- col 5 crossbar -->
+  <rect x="75" y="37" width="14" height="14" fill="#22D3EE" stroke="#15a8c0" stroke-width="1"/>
+  <!-- col 6 -->
+  <rect x="91" y="5"  width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="91" y="21" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="91" y="37" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="91" y="53" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="91" y="69" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+  <rect x="91" y="85" width="14" height="14" fill="#6366F1" stroke="#3d3fb8" stroke-width="1"/>
+
+  <!-- === studs on top row === -->
+  <circle cx="12"  cy="9"  r="3" fill="#7879f5" stroke="#3d3fb8" stroke-width="1"/>
+  <circle cx="44"  cy="9"  r="3" fill="#7879f5" stroke="#3d3fb8" stroke-width="1"/>
+  <circle cx="66"  cy="9"  r="3" fill="#7879f5" stroke="#3d3fb8" stroke-width="1"/>
+  <circle cx="98"  cy="9"  r="3" fill="#7879f5" stroke="#3d3fb8" stroke-width="1"/>
+</svg>

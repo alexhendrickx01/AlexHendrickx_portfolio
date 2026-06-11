@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+
+  <!-- Dark background -->
+  <rect width="200" height="200" fill="#0F1117"/>
+
+  <!-- ================================================
+       Two big lego bricks side by side
+       Each brick: 80x80, with stud on top center
+       Left = A (indigo), Right = H (cyan)
+       Bricks sit at y=50, x=15 and x=105
+  ================================================ -->
+
+  <!-- LEFT BRICK: A -->
+  <rect x="15" y="55" width="80" height="80" rx="0" fill="#6366F1" stroke="#3d3fc4" stroke-width="3"/>
+  <!-- Stud -->
+  <rect x="35" y="36" width="40" height="22" rx="0" fill="#6366F1" stroke="#3d3fc4" stroke-width="3"/>
+  <!-- A letter -->
+  <text x="55" y="116" text-anchor="middle"
+        font-family="system-ui,-apple-system,sans-serif"
+        font-size="52" font-weight="900"
+        fill="#ffffff">A</text>
+
+  <!-- RIGHT BRICK: H -->
+  <rect x="105" y="55" width="80" height="80" rx="0" fill="#22D3EE" stroke="#149ab5" stroke-width="3"/>
+  <!-- Stud -->
+  <rect x="125" y="36" width="40" height="22" rx="0" fill="#22D3EE" stroke="#149ab5" stroke-width="3"/>
+  <!-- H letter -->
+  <text x="145" y="116" text-anchor="middle"
+        font-family="system-ui,-apple-system,sans-serif"
+        font-size="52" font-weight="900"
+        fill="#0a1520">H</text>
+
+  <!-- Bottom base strip -->
+  <rect x="10" y="138" width="180" height="14" rx="0" fill="#1e2035" stroke="#3d3fc4" stroke-width="2"/>
+  <!-- Base studs -->
+  <circle cx="38"  cy="138" r="4" fill="#4a4cc8" stroke="#3d3fc4" stroke-width="1"/>
+  <circle cx="75"  cy="138" r="4" fill="#4a4cc8" stroke="#3d3fc4" stroke-width="1"/>
+  <circle cx="100" cy="138" r="4" fill="#4a4cc8" stroke="#3d3fc4" stroke-width="1"/>
+  <circle cx="125" cy="138" r="4" fill="#4a4cc8" stroke="#3d3fc4" stroke-width="1"/>
+  <circle cx="162" cy="138" r="4" fill="#4a4cc8" stroke="#3d3fc4" stroke-width="1"/>
+
+</svg>
